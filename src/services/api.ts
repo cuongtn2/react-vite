@@ -38,3 +38,8 @@ export const logoutApi = () => {
   const urlBackend = "/api/v1/auth/logout";
   return axios.post<IBackendRes<IFetchAccount>>(urlBackend);
 };
+
+export const getUsersAPI = (query:string) => {
+  const urlBackend = `/api/v1/user?${query}`;
+  return axios.get<IBackendRes<IModelPaginate<IUserTable>>>(urlBackend);
+};
